@@ -10,7 +10,7 @@ CMD ["/sbin/my_init"]
 # ...put your own build instructions here...
 RUN apt-get update
 RUN apt-get upgrade
-RUN apt-get install libftdi1 libftdipp-dev libftdi-dev libftdipp1
+#RUN apt-get install libftdi1 libftdipp-dev libftdi-dev libftdipp1
 RUN apt-get install lcdproc nano
 
 # Clean up APT when done.
