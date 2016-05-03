@@ -10,9 +10,9 @@ CMD ["/sbin/my_init"]
 # ...put your own build instructions here...
 RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 RUN apt-get install libftdi1
-RUN apt-get install libftdipp-dev
-RUN apt-get install libftdi-dev
 RUN apt-get install libftdipp1
+RUN apt-get install libftdi-dev
+RUN apt-get install libftdipp-dev
 
 RUN apt-get install lcdproc nano
 
