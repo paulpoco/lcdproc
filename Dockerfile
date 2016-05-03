@@ -13,6 +13,9 @@ RUN apt-get install -qy libftdi1 libftdipp-dev libftdi-dev libftdipp1 lcdproc na
 RUN export TERM=xterm
 CMD cp LCDd.conf /etc/LCDd.conf
 CMD cp lcdproc /etc/init.d/lcdproc
-
+CMD chmod 755 /etc/init.d/LCDd
+CMD chmod 755 /etc/init.d/lcdproc
+CMD update-rc.d LCDd defaults
+CMD update-rc.d lcdproc defaults
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
