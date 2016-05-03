@@ -9,7 +9,7 @@ CMD ["/sbin/my_init"]
 
 # ...put your own build instructions here...
 RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
-RUN apt-get install -qy libftdi1 libftdipp-dev libftdi-dev libftdipp1 lcdproc nano
+RUN apt-get install -qy libftdi1 libftdipp-dev libftdi-dev libftdipp1 lcdproc nano wget
 RUN export TERM=xterm
 
 # Clean up APT when done.
