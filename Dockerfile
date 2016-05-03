@@ -11,11 +11,11 @@ CMD ["/sbin/my_init"]
 RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 RUN apt-get install -qy libftdi1 libftdipp-dev libftdi-dev libftdipp1 lcdproc nano wget
 RUN export TERM=xterm
-CMD cp LCDd.conf /etc/LCDd.conf
-CMD cp lcdproc /etc/init.d/lcdproc
-CMD chmod 755 /etc/init.d/LCDd
-CMD chmod 755 /etc/init.d/lcdproc
-CMD update-rc.d LCDd defaults
-CMD update-rc.d lcdproc defaults
+RUN cp LCDd.conf /etc/LCDd.conf
+RUN cp lcdproc /etc/init.d/lcdproc
+RUN chmod 755 /etc/init.d/LCDd
+RUN chmod 755 /etc/init.d/lcdproc
+RUN update-rc.d LCDd defaults
+RUN update-rc.d lcdproc defaults
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
