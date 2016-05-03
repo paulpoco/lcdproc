@@ -12,6 +12,7 @@ RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 RUN apt-get install -qy libftdi1 libftdipp-dev libftdi-dev libftdipp1 lcdproc nano wget
 RUN export TERM=xterm
 CMD cp LCDd.conf /etc/LCDd.conf
+CMD cp lcdproc /etc/init.d/lcdproc
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
