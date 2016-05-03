@@ -2,15 +2,14 @@
 # sure you lock down to a specific version, not to `latest`!
 # See https://github.com/phusion/baseimage-docker/blob/master/Changelog.md for
 # a list of version numbers.
-FROM phusion/baseimage:latest
+FROM phusion/baseimage:0.9.18
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
 # ...put your own build instructions here...
-RUN apt-get update
-RUN apt-get upgrade
-#RUN apt-get install libftdi1 libftdipp-dev libftdi-dev libftdipp1
+RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
+RUN apt-get install libftdi1 libftdipp-dev libftdi-dev libftdipp1
 RUN apt-get install lcdproc nano
 
 # Clean up APT when done.
