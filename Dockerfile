@@ -1,12 +1,16 @@
-# bash on alpine
-#
-# VERSION               0.0.2
+# Use phusion/baseimage as base image. To make your builds reproducible, make
+# sure you lock down to a specific version, not to `latest`!
+# See https://github.com/phusion/baseimage-docker/blob/master/Changelog.md for
+# a list of version numbers.
+FROM phusion/baseimage:0.9.18
 
-FROM alpine:edge
-MAINTAINER paulpoco
+# Use baseimage-docker's init system.
+CMD ["/sbin/my_init"]
 
-# make sure the package repository is up to date
-RUN apk update && apk upgrade
-RUN apk add bash nano
-RUN sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
+# ...put your own build instructions here...
+RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
+RUN apt-get install -qy libftdi1 libftdipp-dev libftdi-dev libftdipp1
+RUN apt-get install -qy lcdproc nano
 
+# Clean up APT when done.
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
