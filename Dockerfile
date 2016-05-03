@@ -11,7 +11,8 @@ CMD ["/sbin/my_init"]
 RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 RUN apt-get install libftdi1
 RUN apt-get install libftdipp1
-RUN apt-get install lcdproc nano
+RUN apt-get install lcdproc
+RUN apt-get install nano
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
