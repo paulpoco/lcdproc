@@ -8,6 +8,9 @@ FROM phusion/baseimage:latest
 CMD ["/sbin/my_init"]
 
 # ...put your own build instructions here...
+RUN apt-get update
+RUN apt-get install libftdi1 libftdipp-dev libftdi-dev libftdipp1
+RUN apt-get install lcdproc nano
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
