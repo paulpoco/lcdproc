@@ -8,7 +8,7 @@ FROM phusion/baseimage:0.9.18
 CMD ["/sbin/my_init"]
 
 # ...put your own build instructions here...
-RUN apt-get update && apt-get install -qy libftdi1 libftdipp-dev libftdi-dev libftdipp1 nano wget
+RUN apt-get update && apt-get install -qy libftdi1 libftdipp-dev libftdi-dev libftdipp1 nano wget usbutils
 RUN apt-get -qy build-dep lcdproc
 
 # map /home/nobody
