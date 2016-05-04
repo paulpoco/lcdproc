@@ -18,9 +18,9 @@ RUN chmod 755 /etc/init.d/lcdproc
 RUN update-rc.d LCDd defaults
 RUN update-rc.d lcdproc defaults
 
-RUN export EDITOR="nano"
-RUN export VISUAL="nano"
-RUN export TERM="xterm"
+RUN bash -c 'export EDITOR=nano'
+RUN bash -c 'export VISUAL=nano'
+RUN bash -c 'export TERM=xterm'
 
 # Clean up APT when done.
 #RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
