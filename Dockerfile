@@ -47,3 +47,6 @@ RUN cp scripts/init-LCDd.debian /etc/init.d/LCDd \
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# run script to set uid, gid and permissions
+CMD ["/bin/bash", "/root/init.sh"]
