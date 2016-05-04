@@ -14,10 +14,10 @@ ADD setup/*.conf /etc/supervisor/conf.d/
 ADD setup/root/*.sh /root/
 
 # add bash script to run lcdproc
-ADD apps/nobody/*.sh /home/nobody/
+# ADD apps/nobody/*.sh /home/nobody/
 
 # add pre-configured config files for nobody
-ADD config/nobody/ /home/nobody/
+# ADD config/nobody/ /home/nobody/
 
 
 # install app
