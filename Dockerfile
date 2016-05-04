@@ -7,6 +7,12 @@ FROM phusion/baseimage:0.9.18
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
+# additional files
+##################
+
+# add supervisor conf file for app
+ADD setup/*.conf /etc/supervisor/conf.d/
+
 # ...put your own build instructions here...
 RUN apt-get update && apt-get install -qy libftdi1 libftdipp-dev libftdi-dev libftdipp1 nano wget usbutils
 RUN apt-get -qy build-dep lcdproc
