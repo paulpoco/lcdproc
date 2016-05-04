@@ -6,8 +6,6 @@ set -e
 # define pacman packages
 pacman_packages="libftdi-compat perl"
 
-pacman -Syyu
-
 # install pre-reqs
 pacman -S --needed $pacman_packages --noconfirm
 
