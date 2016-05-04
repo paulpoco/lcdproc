@@ -6,7 +6,7 @@ set -e
 # define pacman packages
 pacman_packages="libftdi-compat perl"
 
-pacman-mirrors -g && pacman -Syyuu && pacman -Suu
+pacman -Syyu
 
 # install pre-reqs
 pacman -S --needed $pacman_packages --noconfirm
