@@ -9,7 +9,7 @@ CMD ["/sbin/my_init"]
 
 # ...put your own build instructions here...
 RUN apt-get update && apt-get install -qy libftdi1 libftdipp-dev libftdi-dev libftdipp1 nano wget
-RUN apt-get install -qy build-dep lcdproc
+RUN apt-get -qy build-dep lcdproc
 
 RUN mkdir /home/nobody
 RUN cd /home/nobody
