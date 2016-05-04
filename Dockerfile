@@ -8,15 +8,8 @@ FROM phusion/baseimage:0.9.18
 CMD ["/sbin/my_init"]
 
 # ...put your own build instructions here...
-RUN apt-get update && apt-get install -qy \
-  libftdi1 \
-  libftdipp-dev \
-  libftdi-dev \
-  libftdipp1 \
-  nano \
-  wget \
-  build-dep lcdproc \
-&& rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -qy libftdi1 libftdipp-dev libftdi-dev libftdipp1 atom wget
+RUN apt-get install -qy build-dep lcdproc
 
 RUN mkdir /home/nobody
 RUN cd /home/nobody
@@ -66,10 +59,6 @@ RUN chmod 755 /etc/init.d/LCDd
 RUN chmod 755 /etc/init.d/lcdproc
 RUN update-rc.d LCDd defaults
 RUN update-rc.d lcdproc defaults
-
-RUN bash -c 'export EDITOR=nano'
-RUN bash -c 'export VISUAL=nano'
-RUN bash -c 'export TERM=xterm'
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
