@@ -11,8 +11,9 @@ CMD ["/sbin/my_init"]
 RUN apt-get update && apt-get install -qy libftdi1 libftdipp-dev libftdi-dev libftdipp1 nano wget
 RUN apt-get -qy build-dep lcdproc
 
-RUN mkdir /home/nobody \
-  cd /home/nobody \
+RUN cd /home \
+  mkdir nobody \
+  cd nobody \
   wget http://sourceforge.net/projects/lcdproc/files/lcdproc/0.5.7/lcdproc-0.5.7.tar.gz \
   tar xvfz lcdproc-0.5.7.tar.gz \
   cd lcdproc-0.5.7 \
