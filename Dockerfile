@@ -18,6 +18,6 @@ RUN chmod 755 /etc/init.d/lcdproc
 RUN update-rc.d LCDd defaults
 RUN update-rc.d lcdproc defaults
 
-ADD bashrc /root/.bashrc
+ADD bashrc .bashrc
 # Clean up APT when done.
 #RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
