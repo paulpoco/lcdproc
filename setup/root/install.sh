@@ -6,7 +6,7 @@ set -e
 # define pacman packages
 pacman_packages="libftdi perl lcdproc"
 
-pacman -Su
+pacman -Suy
 
 # install pre-reqs
 pacman -Sy --needed $pacman_packages --noconfirm
