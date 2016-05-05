@@ -4,13 +4,13 @@
 set -e
 
 # define pacman packages
-pacman_packages="libftdi perl lcdproc nano wget"
+pacman_packages="libftdi perl nano wget"
 
 # install pre-reqs
 pacman -Sy --needed $pacman_packages --noconfirm
 
 # call aor script (arch official repo)
-# source /root/aor.sh
+source /root/aor.sh
 
 # cleanup
 yes|pacman -Scc
