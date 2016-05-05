@@ -6,7 +6,6 @@ set -e
 # define pacman packages
 pacman_packages="libftdi perl lcdproc"
 
-pacman -Sy archlinux-keyring
 pacman -Su
 
 # install pre-reqs
