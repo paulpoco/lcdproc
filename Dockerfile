@@ -17,7 +17,7 @@ ADD setup/root/*.sh /root/
 ADD apps/nobody/*.sh /home/nobody/
 
 # add pre-configured config files for nobody
-ADD config/nobody/ /home/nobody/
+ADD config/nobody/lcdproc /home/nobody/lcdproc/
 
 
 # install app
