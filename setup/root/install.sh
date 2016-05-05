@@ -10,7 +10,7 @@ pacman_packages="libftdi libftdi-compat perl nano wget"
 pacman -Sy --needed $pacman_packages --noconfirm
 
 # call aor script (arch official repo)
-source /root/aor.sh
+# source /root/aor.sh
 
 # cleanup
 yes|pacman -Scc
