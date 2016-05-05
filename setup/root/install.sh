@@ -6,6 +6,8 @@ set -e
 # define pacman packages
 pacman_packages="archlinux-keyring libftdi perl lcdproc"
 
+pacman-key -r 4096R
+
 # install pre-reqs
 pacman -Sy --needed $pacman_packages --noconfirm
 
