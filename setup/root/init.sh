@@ -38,8 +38,8 @@ else
 fi
 
 # set permissions inside container
-chown -R "${PUID}":"${PGID}" /usr/bin/LCDd /usr/lib/lcdproc /home/nobody
-chmod -R 775 /usr/bin/LCDd /usr/lib/lcdproc /home/nobody
+chown -R "${PUID}":"${PGID}" /usr/bin/LCDd /usr/sbin/LCDd /usr/lib/lcdproc /home/nobody
+chmod -R 775 /usr/bin/LCDd /usr/sbin/LCDd /usr/lib/lcdproc /home/nobody
 
 echo "[info] Starting Supervisor..."
 
